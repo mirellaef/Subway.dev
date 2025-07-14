@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,77 +11,127 @@
 
 <body>
   <section id="inicio">
-    <div class="banner">
-      <img src="imagens/Subway_logo_editado.svg" alt="Logo Subway">
-      <h2 class="mensagem">BEM-VINDO!</h2>
-      <button id="continuar" class="botao">CONTINUAR</button>
-    </div>
-  </section>
-
-  <section id="cardapio" style="display: none;">
-    <header class="topo">
-      <img src="imagens/Subway_logo_editado.svg" alt="Logo Subway">
-      <div class="carrinho">
-        <span class="fas fa-shopping-cart"></span>
+    <div class="conteudo">
+      <div class="banner">
+        <img src="imagens/Subway_logo_editado.svg" alt="Logo Subway">
+        <h2 class="mensagem">BEM-VINDO!</h2>
+        <button id="continuar" class="botao">CONTINUAR</button>
       </div>
-    </header>
-
-    <main class="lanches">
-      <ul>
-        <li>
-          <img src="imagens/sanduiches-veg-vegetariano.jpg" alt="Vegetariano">
-          <p>sanduiches vegetariano</p>
-          <button class="adicionar" data-nome="Vegetariano">+</button>
-          <p>R$ 34,00</p>
-        </li>
-        <li>
-          <img src="imagens/sanduiches-frango-teriyaki.jpg" alt="Frango Teriyaki">
-          <p>R$ 36,00</p>
-        </li>
-        <li>
-          <img src="imagens/sanduiches-embutidos-presunto.jpg" alt="Presunto">
-          <p>R$ 36,00</p>
-        </li>
-        <li>
-          <img src="imagens/sanduiches-embutidos-bmt-italiano.jpg" alt="BMT Italiano">
-          <p>R$ 34,00</p>
-        </li>
-        <li>
-          <img src="imagens/sanduiches-carne-supreme.jpg" alt="Carne Supreme">
-          <p>R$ 38,00</p>
-        </li>
-        <li>
-          <img src="imagens/sanduiches-carne-seca-com-cream-cheese.jpg" alt="Carne seca com cream cheese">
-          <p>R$ 38,00</p>
-        </li>
-      </ul>
-    </main>
-
-    <section class="botoes">
-      <button><span class="fas fa-bottle-water"></span></button>
-      <button><span class="fas fa-hamburger"></span></button>
-      <button><span class="fas fa-arrow-right"></span></button>
-    </section>
+    </div>
   </section>
 
-  <footer class="rodape">
-    <div class="redes">
-      <span class="fab fa-facebook-f"></span>
-      <span class="fab fa-instagram"></span>
-      <span class="fab fa-x-twitter"></span>
-    </div>
-    <div class="contato">
-      <span>FALE CONOSCO</span>
-      <div class="caixa">contato@subway.com<br>0800-000-000</div>
-    </div>
-  </footer>
+  <section class="pg1">
+    <section id="cardapio" style="display: none;">
+      <header class="topo">
+        <img src="imagens/Subway_2016_logo.svg" alt="Logo Subway">
+        <div class="carrinho">
+          <span class="fas fa-shopping-cart"></span>
+        </div>
+      </header>
 
-  <script>
-    const btn = document.querySelector('#continuar');
-    btn.addEventListener('click', () => {
-      document.querySelector('#inicio').style.display = "none";
-      document.querySelector('#cardapio').style.display = "block";
-    });
-  </script>
+      <main class="lanches">
+        <ul>
+          <li>
+            <img src="imagens/sanduiches-veg-vegetariano.jpg" alt="Vegetariano">
+            <p>Sanduíche Vegetariano</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-embutidos-presunto.jpg" alt="Presunto">
+            <p>Sanduíche de Presunto</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-embutidos-bmt-italiano.jpg" alt="BMT Italiano">
+            <p>Sanduíche Italiano</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-embutidos-bmt-italiano.jpg" alt="BMT Italiano">
+            <p>Sanduíche Italiano</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-carne-supreme.jpg" alt="Carne Supreme">
+            <p>Sanduíche Carne Suprema</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-frango-teriyaki.jpg" alt="Frango Teriyaki">
+            <p>Sanduíche Frango Teriyaki</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+
+          <li>
+            <img src="imagens/sanduiches-carne-seca-com-cream-cheese.jpg" alt="Carne seca com cream cheese">
+            <p>Sanduíche Carne Seca c/ Cream Cheese</p>
+            <p class="preco">R$ 34,00</p>
+            <div class="controle">
+              <button onclick="alterarQuantidade(this, -1)">–</button>
+              <span class="quantidade">0</span>
+              <button onclick="alterarQuantidade(this, 1)">+</button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="controle">
+          <button onclick="alterarQuantidade(this, -1)">–</button>
+          <span class="quantidade">0</span>
+          <button onclick="alterarQuantidade(this, 1)">+</button>
+        </div>
+      </main>
+
+      <section class="botoes">
+        <button><span class="fas fa-bottle-water"></span></button>
+        <button><span class="fas fa-hamburger"></span></button>
+        <button><span class="fas fa-arrow-right"></span></button>
+      </section>
+    </section>
+    </main>
 </body>
+
+<script>
+  const btn = document.querySelector('#continuar');
+  btn.addEventListener('click', () => {
+    document.querySelector('#inicio').style.display = "none";
+    document.querySelector('#cardapio').style.display = "block";
+  });
+</script>
+</body>
+
 </html>
